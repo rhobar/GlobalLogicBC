@@ -14,11 +14,76 @@
 
 using namespace std;
 
+void Input(struct Point *p)
+{
+	bool valid;
+	char buff[10];
+	int i, j;
+	//cout<<"Input points:\n";
+	printf("Input points:\n");
+	for(i = 0; i < N; i++)
+	{
+		//scanf("%d %d %s", &p[i].x, &p[i].y, p[i].color);
+		printf("Input %i point:\n", i);
+		do
+		{
+			scanf("%s", buff);
+			valid = true;
+			for(j = 0; j < 5; j++)
+			{
+				if(j == 0)
+				{
+					if(buff[0] == '-' && (buff[1] != '\0' || buff[1] != '\n') )
+						j++;
+				}
+				else
+					if( (buff[j] == '\0' || buff[j] == '\n') && j != 0)
+					break;
+				if(!isdigit(buff[j]) )
+				{
+					valid=false;
+					break;
+				}
+			}		
+			if(!valid)
+				printf("Wrong entered number x! Try again.");		
+		} while (!valid);
+		p[i].x = atoi(buff);
+		do
+		{
+			scanf("%s", buff);
+			valid=true;
+			for(j = 0; j < 5; j++)
+			{
+				if(j == 0)
+				{
+					if(buff[0] == '-' && (buff[1] != '\0' || buff[1] != '\n') )
+						j++;
+				}
+				else
+					if( (buff[j] == '\0' || buff[j] == '\n') && j != 0)
+					break;
+				if(!isdigit(buff[j]) )
+				{
+					valid=false;
+					break;
+				}
+			}		
+			if(!valid)
+				printf("Wrong entered number y! Try again.");		
+		} while (!valid);
+		p[i].y = atoi(buff);
+		//cin>>p[i].y;
+		scanf("%s", p[i].color);
+		//cin>>p[i].color;
+	}
+}
+
 void Sort(struct Point *p)
 {
 	int i, j;
 	struct Point y;
-	char str1[5], str2[5], s1[20], s2[20];
+	char s1[10], s2[10];
 	for(i = N - 1; i > 0; i--)
 		for(j = 0; j < i; j++)
 		{ 

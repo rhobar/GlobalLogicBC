@@ -19,16 +19,23 @@ struct Point
 };
 
 /**
+  * @brief		This function for checking entered data
+  * @param		[in] pointer struct Point pointer
+  * @return		void
+  */
+void Input(struct Point *);
+
+/**
   * @brief		This function sorts array of points with color
-  * @param		[in] struct Point pointer
+  * @param		[in] pointer struct Point pointer
   * @return		void
   */
 void Sort(struct Point *);
 
 /**
   * @brief		This function looks for maximum distance betwwen two points with same colors
-  * @param		[in] struct Point pointer - begin of array
-  * @param		[in] struct Point pointer - end of array
+  * @param		[in] pointer struct Point pointer - begin of array
+  * @param		[in] pointer struct Point pointer - end of array
   * @return		void
   */
 void MaxDistance(struct Point *, struct Point *);
