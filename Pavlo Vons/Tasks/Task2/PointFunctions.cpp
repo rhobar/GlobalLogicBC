@@ -29,7 +29,7 @@ void Input(struct Point *p)
 		{
 			scanf("%s", buff);
 			valid = true;
-			for(j = 0; j < 10; j++)
+			for(j = 0; j < 5; j++)
 			{
 				if(j == 0)
 				{
@@ -53,7 +53,7 @@ void Input(struct Point *p)
 		{
 			scanf("%s", buff);
 			valid=true;
-			for(j = 0; j < 10; j++)
+			for(j = 0; j < 5; j++)
 			{
 				if(j == 0)
 				{
